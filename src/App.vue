@@ -1,7 +1,9 @@
 <template>
    <a-menu v-model:selectedKeys="current" mode="horizontal" class="rtl">
     <a-menu-item key="mail">
+      <i class="fas fa-home"></i>
       <router-link to="/home">
+      
   Home
       </router-link>
     
