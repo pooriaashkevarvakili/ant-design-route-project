@@ -4,20 +4,21 @@ import Home from "../pages/Home.vue";
 import App from "../App.vue"
 const routes = [
     {
-path:'/',
-component:App
-    },
-  {
-  path:'/home', 
-  name:"Home",
-  component:Home
+        path: '/',
+        name: 'Index',
 
-  },
+    },
+    {
+        path: '/home',
+        name: "Home",
+        component: Home
+
+    },
     {
         path: '/news',
         name: 'news',
-        component:News ,
-    
+        component: News,
+
     }
 ]
 const router = createRouter({

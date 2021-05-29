@@ -1,21 +1,40 @@
 <template>
-<div class="rtl">
- <div class="flex flex-row" >
-<a-menu class="w-2/12 h-screen rtl  bg-red-500 ">
-<a-menu-item>
-<router-link to="/home" @click.prevent="Add()">
-  <i  class="fas fa-home"></i>  
-  خانه
-  </router-link>
-</a-menu-item>
-  
-  
+   <a-menu v-model:selectedKeys="current" mode="horizontal" class="rtl">
+    <a-menu-item key="mail">
+      <router-link to="/home">
+  Home
+      </router-link>
     
-
-</a-menu>
+    </a-menu-item>
+    <a-menu-item key="app" >
    
-  </div>
-</div>
+            <router-link to="/news">
+ خبرها
+      </router-link>
+    </a-menu-item>
+    <a-sub-menu>
+      <template #title>
+        <span class="submenu-title-wrapper">
+          <setting-outlined />
+          Navigation Three - Submenu
+        </span>
+      </template>
+      <a-menu-item-group title="Item 1">
+        <a-menu-item key="setting:1">Option 1</a-menu-item>
+        <a-menu-item key="setting:2">Option 2</a-menu-item>
+      </a-menu-item-group>
+      <a-menu-item-group title="Item 2">
+        <a-menu-item key="setting:3">Option 3</a-menu-item>
+        <a-menu-item key="setting:4">Option 4</a-menu-item>
+      </a-menu-item-group>
+    </a-sub-menu>
+    <a-menu-item key="alipay">
+      <a href="https://antdv.com" target="_blank" rel="noopener noreferrer">
+        Navigation Four - Link
+      </a>
+    </a-menu-item>
+  </a-menu>
+ <router-view/>
 </template>
 
 
@@ -36,10 +55,7 @@ export default defineComponent({
   name: 'App',
   
   setup() {
-    const Router=useRouter();
-    function Add (){
-      Router.push("./home")
-    }
+  
     const state = reactive({
       collapsed: false,
       selectedKeys: ['1'],
@@ -61,7 +77,7 @@ export default defineComponent({
     return {
       ...toRefs(state),
       toggleCollapsed,
-      Add
+  
     };
   },
   components: {
@@ -77,7 +93,5 @@ export default defineComponent({
 </script>
 
 <style>
-#app {
 
-}
 </style>

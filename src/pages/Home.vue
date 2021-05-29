@@ -1,17 +1,12 @@
 <template>
-<App/>
-<router-view>
-<div>
-salam
+<div class="rtl ">
+2
 </div>
-</router-view>
-
-
 </template>
 
 <script>
 import {defineComponent} from "vue"
-import App from "../App.vue"
+
 
 
 export default defineComponent({

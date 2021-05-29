@@ -1,5 +1,5 @@
 <template>
- <div>2</div>
+ <div class="rtl">news</div>
 </template>
 
 <script lang="ts">
